@@ -1,0 +1,29 @@
+<div class = banner>
+<h1>My tasks</h1>
+</div>
+
+<div class = index-container>
+
+<ul>
+<% @tasks.each do |task| %>
+<li>
+  <% if task.completed == true %>
+  <i class="far fa-check-square"></i>
+  <% else %>
+  <i class="far fa-square"></i>
+  <% end %>
+  <p><%= link_to task.title, task_path(task.id) %></p>
+  <%= link_to task_path(task.id),
+    method: :delete,
+    data: { confirm: "Are you sure?" } do %>
+  <i class="fas fa-trash"></i>
+  <% end %>
+</li>
+<% end %>
+</ul>
+
+<div class = "button">
+<%= link_to 'New task', new_path %>
+</div>
+
+</div>

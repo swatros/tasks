@@ -1,0 +1,11 @@
+
+<div class="banner"><h1><%= @task.title %></h1></div>
+
+<div class = "index-container">
+<h3>Task completed: <%= @task.completed %></h3>
+<p><%= @task.details %></p>
+
+<%= link_to 'Edit task', edit_task_path %>
+<%= link_to 'Back to task list', tasks_path %>
+
+</div>
